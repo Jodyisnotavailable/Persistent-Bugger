@@ -5,14 +5,14 @@ function persistence(num) {
   var i = 0;
   var multi = 0;
   
-  if (a.length == 1) {
+  if (a < 9) { //one digit
     return count;
   } else {
     while (i<a.length) {
-      if (i == 0) {
+      if (i == 0) { //multiply 1st digit*2nd digit
         multi = arr[i]*arr[i+1];
       } else {
-        if (a.length >2 && i > 1) {
+        if (i > 1) { //skip 1st and 2nd digit, multiply
           multi = multi*arr[i];
         }
       }
@@ -20,6 +20,6 @@ function persistence(num) {
     }
   count = count + 1;
   num = multi;
-  return count + persistence(num);
+  return count + persistence(num); //recursion
   }
 }
